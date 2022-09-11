@@ -14,7 +14,10 @@ const StarRating = ({
         <Star
           key={i}
           selected={selectedStars > i}
-          onSelect={() => onRate(i + 1)}
+          onSelect={(e) => {
+            onRate(i + 1);
+            e.stopPropagation();
+          }}
         />
       ))}
     </>
